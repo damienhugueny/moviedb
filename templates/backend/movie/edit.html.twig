@@ -1,0 +1,25 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Modifier un film{% endblock %}
+
+{% block body %}
+
+<h1>Modifier un film</h1>
+
+<!-- Balise ouverture form -->
+{{ form_start(form, {attr: {novalidate: 'novalidate', id: 'movie-form'}}) }}
+    <!-- Affiche chaque champ un par un -->
+    {{ form_row(form.title, {label: 'Titre du film'}) }}
+    {{ form_row(form.genres) }}
+
+    <!-- Bouton de soumission du form -->
+    <button type="submit" class="btn btn-success">Modifier</button>
+
+<!-- Balise fermeture form -->
+{{ form_end(form) }}
+
+{# Retour à la liste #}
+<hr>
+<a href="{{ path('backend_movie_list') }}">Retour à la liste</a>
+
+{% endblock %}

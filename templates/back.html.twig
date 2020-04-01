@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block subnav %}
+
+<nav class="container">
+    <div class="row">
+        <div class="col">
+
+            {# Nav #}
+
+            <ul class="container nav nav-tabs mt-3">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ path('backend_movie_list') }}">Films</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('backend_job_list') }}">Métiers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('user_index') }}">Utilisateurs</a>
+                </li>
+            </ul>
+
+            {# Messages Flash #}
+
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }} mt-3">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+
+        </div>
+    </div>
+</nav>
+
+{% endblock %}

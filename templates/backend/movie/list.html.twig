@@ -1,0 +1,34 @@
+{% extends "back.html.twig" %}
+
+{% block title %}Liste des films{% endblock %}
+
+{% block body %}
+
+<h1>Admin films</h1>
+
+<a href="{{ path('backend_movie_add') }}" class="btn btn-primary">Ajouter un film</a>
+
+<table class="table table-striped table-hover mt-3">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {# Début film #}
+        {% for movie in movies %}
+        <tr>
+            <th scope="row">{{ movie.id }}</th>
+            <td><a href="{{ path('backend_movie_show', {id: movie.id}) }}">{{ movie.title }}</a></td>
+            <td><a href="{{ path('backend_movie_edit', {id: movie.id}) }}">modifier</a></td>
+            <td><a href="{{ path('backend_movie_delete', {id: movie.id}) }}" onclick="return confirm('Supprimer le film {{ movie.title|e('js') }} ?')">supprimer</a></td>
+        </tr>
+        {% endfor %}
+        {# Fin film #}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+    {#
+        Si on souhaite réordonner l'affichage du formulaire sans modifier le FormType,
+        on décompose l'affichage chaque champ
+    #}
+    {{ form_row(form.email) }}
+    {{ form_row(form.password) }}
+    {{ form_row(form.userRoles) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

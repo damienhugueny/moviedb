@@ -1,0 +1,23 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Modifier un métier{% endblock %}
+
+{% block body %}
+
+<h1>Modifier un métier</h1>
+
+<!-- Balise ouverture form -->
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+    {{ form_widget(form) }}
+
+    <!-- Bouton de soumission du form -->
+    <button type="submit" class="btn btn-success">Modifier</button>
+
+<!-- Balise fermeture form -->
+{{ form_end(form) }}
+
+{# Retour à la liste #}
+<hr>
+<a href="{{ path('backend_job_list') }}">Retour à la liste</a>
+
+{% endblock %}

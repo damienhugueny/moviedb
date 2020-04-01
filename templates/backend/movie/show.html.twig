@@ -1,0 +1,26 @@
+{% extends "back.html.twig" %}
+
+{% block title %}{{ movie.title }}{% endblock %}
+
+{% block body %}
+
+<div class="card mb-3">
+    <div class="card-body">
+        <h3 class="card-title">{{ movie.title }}</h3>
+
+        <p>Slug : {{ movie.slug }}</p>
+
+        <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">Mis à jour le {{ movie.updatedAt|format_datetime() }}</li>
+        </ul>
+
+        <a href="{{ path('backend_movie_edit', {id: movie.id}) }}" class="btn btn-info">Modifier</a>
+        <a href="{{ path('backend_movie_delete', {id: movie.id}) }}" class="btn btn-danger" onclick="return confirm('Supprimer le film {{ movie.title|e('js') }} ?')">Supprimer</a>
+
+    </div>
+</div>
+
+<hr>
+<a href="{{ path('backend_movie_list') }}">Retour à la liste</a>
+
+{% endblock %}

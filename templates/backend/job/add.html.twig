@@ -1,0 +1,19 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Ajouter un métier{% endblock %}
+
+{% block body %}
+
+<h1>Ajouter un métier</h1>
+
+<!-- Balise ouverture form -->
+{{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+    {{ form_widget(form) }}
+
+    <!-- Bouton de soumission du form -->
+    <button type="submit" class="btn btn-success">Ajouter</button>
+
+<!-- Balise fermeture form -->
+{{ form_end(form) }}
+
+{% endblock %}

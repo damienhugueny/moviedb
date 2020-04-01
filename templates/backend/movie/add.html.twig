@@ -1,0 +1,21 @@
+{% extends 'back.html.twig' %}
+
+{% block title %}Ajouter un film{% endblock %}
+
+{% block body %}
+
+<h1>Ajouter un film</h1>
+
+<!-- Balise ouverture form -->
+{{ form_start(form, {attr: {novalidate: 'novalidate', id: 'movie-form'}}) }}
+    <!-- Affiche chaque champ un par un -->
+    {{ form_row(form.title, {label: 'Titre du film'}) }}
+    {{ form_row(form.genres) }}
+
+    <!-- Bouton de soumission du form -->
+    <button type="submit" class="btn btn-success">Ajouter</button>
+
+<!-- Balise fermeture form -->
+{{ form_end(form) }}
+
+{% endblock %}
