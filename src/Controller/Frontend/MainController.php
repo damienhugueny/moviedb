@@ -41,10 +41,10 @@ class MainController extends AbstractController
             throw $this->createNotFoundException('Ce film n\'existe pas.');
         }
         
-        dump($movie);
+       // dump($movie);
 
         $castings = $castingRepository->getCastingsJoinedToPersonByMovie($movie);
-        dump($castings);
+       // dump($castings);
 
         return $this->render('frontend/main/movie_show.html.twig', [
             'movie' => $movie,
